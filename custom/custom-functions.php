@@ -207,7 +207,7 @@ function as21_css_js_for_theme()
         wp_enqueue_style('elementor-frontend', plugins_url() . "/elementor/assets/css/frontend.min.css");
     }
 
-    wp_enqueue_style('main-custom', get_template_directory_uri() . "/custom/main-custom.css?d=7.8.2018_4");
+    wp_enqueue_style('main-custom', get_template_directory_uri() . "/custom/main-custom.css?d=7.8.2018_5");
 }
 
 function as21_free_packaging_section($atts)
