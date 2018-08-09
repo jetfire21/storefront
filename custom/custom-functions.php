@@ -207,7 +207,7 @@ function as21_css_js_for_theme()
         wp_enqueue_style('elementor-frontend', plugins_url() . "/elementor/assets/css/frontend.min.css");
     }
 
-    wp_enqueue_style('main-custom', get_template_directory_uri() . "/custom/main-custom.css?d=7.8.2018_5");
+    wp_enqueue_style('main-custom', get_template_directory_uri() . "/custom/main-custom.css?d=9.8.2018");
 }
 
 function as21_free_packaging_section($atts)
@@ -362,6 +362,8 @@ function as21_my_body_class_names($classes)
 {
     // добавим класс 'class-name' в массив классов $classes
     if (is_page('our-cards')) $classes[] = 'our-cards';
+    if (is_page('contact-us')) $classes[] = 'contact-us';
+    // if (is_page('product-info')) $classes[] = 'product-info';
 
     return $classes;
 }
@@ -923,10 +925,13 @@ function as21_feat_img(){
                   $card_no_ext = str_replace(".jpg", "", $card);
                  if( preg_match("/".$card_no_ext."/i", $title->post_title) ){
                     echo $num_r." - ".$title->ID." : ".$title->post_title." - ".$card."<br>";
-                     // as21_add_product_img_program_multi($title->ID, $card_no_ext);
+                     // as21_add_product_img_program_multi($title->ID, $card_no_ext); // запись в бд
                     $num_r++;
                     break;
-                 }
+                  }
+                  // else{
+                 //    echo $k." - ".$title->ID." : ".$title->post_title." - ".$card." not found in db!<br>";
+                 // }
              }
          }
 
@@ -934,7 +939,15 @@ function as21_feat_img(){
 
         }
         as21_debug(0,1,'',$titles);
-        echo "count prods, no set prod:". (count($titles));
+        echo "count prod-cards delete set prod:". (count($titles));
+
+        foreach ($q1 as $card) {
+            $title = strtolower(preg_replace('/[0-9]+/', '', $card->post_title));
+            $title = $title.".jpg";
+            $prod_cards_bd[] = trim(str_replace("#", '', $title));
+        }
+        as21_debug(0,1,'',array_diff($prod_cards_bd, $card_titles));
+        as21_debug(0,1,'',array_diff( $card_titles,$prod_cards_bd));
         // return;
         // exit;
 
@@ -985,7 +998,7 @@ function as21_feat_img(){
             array( '%d','%s', '%s' )
              );
             // add card backend side img
-                        echo "<hr>";
+            echo "<hr>";
         }
 
 // add_action("init", "as21_get_all_image_sizes", 999);

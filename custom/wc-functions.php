@@ -71,7 +71,7 @@ function as21_wc_test3()
     }
 }
 
-add_action("storefront_page_after", "as21_our_cards");
+// add_action("storefront_page_after", "as21_our_cards");
 function as21_our_cards()
 {
     if (!is_page('our-cards')) return;
@@ -131,9 +131,11 @@ function as21_you_may_also_like_sets()
 ?>
 
 					<li class="post-40 product type-product status-publish has-post-thumbnail product_cat-animals instock taxable shipping-taxable purchasable product-type-simple">
-						<a href="<?php echo $category_link; ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><h2 class="woocommerce-loop-product__title">
+						<a href="<?php echo $category_link; ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                        <h2 class="woocommerce-loop-product__title">
 							<?php echo get_the_title($like_set_id); ?>
-						</h2><span class="as21-wc-border-img">
+						</h2>
+                        <span class="as21-wc-border-img">
 							<span class="view_all">VIEW</span>
 							<?php echo $set_thumb = get_the_post_thumbnail($like_set_id, 'woocommerce_thumbnail'); ?>
 						</span></a>
@@ -204,7 +206,7 @@ function as21_prod_cat_show_cat()
 
 		<?php if (apply_filters('woocommerce_show_page_title', true)): ?>
 			<!-- <h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1> -->
-			<h2 class="big-card-title"><?php woocommerce_page_title(); ?></h2>
+			<h2 class="big-card-title"><?php woocommerce_page_title(); ?> set</h2>
 		<?php
     endif; ?>
 		<!-- <ul class="as21-single-set products columns-4">  -->
@@ -217,7 +219,7 @@ function as21_prod_cat_show_cat()
 ?>
 				</li>
 			</ul>
-			<h3 class="as21-big-gray-size-title angle-down">INCLUDED</h3>
+			<h3 class="as21-big-gray-size-title angle-down">EACH CARD CAN BE PURCHASED INDIVIDUALLY</h3>
 		</div>         
 		<?php
 }
@@ -781,3 +783,11 @@ add_filter( 'default_checkout_billing_state', 'change_default_checkout_state' );
 function change_default_checkout_state() {
   return 'ACT'; // state code
 }
+
+// add_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_product_title',10 )
+// on produc page in section "YOU MAY ALSO LIKE" delete prod_title 
+    function woocommerce_template_loop_product_title() {
+        // var_dump(is_product());
+        if( is_product()) return;
+        echo '<h2 class="woocommerce-loop-product__title">' . get_the_title() . '</h2>';
+    }

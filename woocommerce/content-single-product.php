@@ -79,10 +79,10 @@ $short_title = preg_replace('/#(.*)\s/i', '',$full_title );
 <!-- end .col-full -->
 <section data-id="94a7f28" class="elementor-element elementor-element-94a7f28 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section section-card-back-part" data-element_type="section">
 	<div class="elementor-container elementor-column-gap-default">
-		<div class="elementor-row">			<h2 class="big-card-title"><?php echo $short_title;?></h2></div>
+		<!-- <div class="elementor-row">			<h2 class="big-card-title"><?php echo $short_title;?></h2></div> -->
 		<div class="elementor-row">
 			<h3 class="as21-big-gray-size-title vert-text">CARD</h3>
-			<div data-id="f314522" class="elementor-element elementor-element-f314522 elementor-column elementor-col-50 elementor-top-column" data-element_type="column">
+			<div data-id="f314522" class="elementor-element elementor-element-f314522 elementor-column elementor-col-50 elementor-top-column as21-back-sm-order" data-element_type="column">
 				<div class="elementor-column-wrap elementor-element-populated">
 					<div class="elementor-widget-wrap">
 						<div data-id="ffacd8b" class="elementor-element elementor-element-ffacd8b elementor-widget elementor-widget-image" data-element_type="image.default">
@@ -111,7 +111,7 @@ $short_title = preg_replace('/#(.*)\s/i', '',$full_title );
 		</div>
 	</div>
 </div>
-<div data-id="43fbf94" class="elementor-element elementor-element-43fbf94 elementor-column elementor-col-50 elementor-top-column" data-element_type="column">
+<div data-id="43fbf94" class="elementor-element elementor-element-43fbf94 elementor-column elementor-col-50 elementor-top-column as21-fron-sm-order" data-element_type="column">
 	<div class="elementor-column-wrap elementor-element-populated">
 		<div class="elementor-widget-wrap">
 			<div data-id="1b7fc21" class="elementor-element elementor-element-1b7fc21 elementor-widget elementor-widget-image" data-element_type="image.default">

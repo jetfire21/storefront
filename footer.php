@@ -21,15 +21,16 @@
 			<div class="elementor-row">
 				<div class="elementor-column elementor-col-30 foot-logo-column" data-element_type="column">
 					<div class="foot-logo">
-						<img src="<?php echo get_template_directory_uri();?>/img/AussieGLO_White.png">
+						<!-- <img src="<?php echo get_template_directory_uri();?>/img/AussieGLO_White.png"> -->
+						<img src="<?php echo get_template_directory_uri();?>/img/logo-white-9-8.png">
 						<!-- <span>Aussie made greeting cards</span> -->
-						<?php
+						<?php/*
 						if ( '' !== get_bloginfo( 'description' ) ) {
 							echo $html .= '<span>' . esc_html( get_bloginfo( 'description', 'display' ) ) . '</span>';
 						}
-						?>
+						*/?>
 					</div>
-					<p>ABN 72 085 015 621</p>
+					<p class="abn">ABN 72 085 015 621</p>
 				</div>
 				<div class="elementor-column elementor-col-20" data-element_type="column">
 					<?php
